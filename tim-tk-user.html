@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style type="text/css">
+    body{
+  font-family: 'verdana', serif, sans-serif;
+  font-size:14px;
+  }
+
+  .error{
+    color:red;
+  }
+  .display-none{
+    display: none;
+  }
+
+  .navbar-nav.navbar-right label{
+    padding:15px;
+  }
+
+  .form-tsk{
+    padding:5px;
+    font-size: 13px;
+  }
+  .form-group label.equal-input, .form-group div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 34px;
+  }
+  .scrollingtext {
+    height: 200px;
+    overflow:auto;
+    border: 5px;
+    list-style: none;
+    }
+    .scrollingtext a{
+    color: black;
+    text-decoration: none;
+    }
+    .scrollingtext a:hover{
+    color: blue;
+    }
+    .myform{
+    width: 700px;
+    margin:0px auto;
+    }
+  </style>
+ 
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><label>Xin chào anh Hạnh</label></li>
+        <li>
+            <a href="#">Đăng xuất</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+  
+    <!--Thanh menu-->
+    <div class="col-md-2 col-sm-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a id="themsukienclick">Thêm sự kiện</a></li>
+        <li><a id="dssukienclick">Danh sách sự kiện</a></li>
+        <li><a id="timtaikhoanclick">Tìm tài khoản</a></li>
+        <li><a id="timsulienclick">Tìm sự kiện</a></li>
+        <li><a id="quanlytkclick">Quản lý tài khoản</a></li>
+      </ul>
+    </div><!--Hết thanh menu-->
+
+    <!--Nội dung-->
+    <div class="col-md-10 col-sm-9">
+      <!--Tìm tài khoản-->
+      <div class="row" id="timtaikhoan"> 
+        <div class="row">
+        <div class="row navbar navbar-default">
+           <div style="width:max-content; margin:auto; line-height:50px; font-weight: 700;">Tìm tài khoản</div>
+        </div>
+          <div class="">
+             <div class="col-lg-3 col-md-3 col-sm-3">
+                <select class="form-control" id="tim-bang">
+                  <option value='0'>UserName</option>
+                  <option value='1'>Tên</option>
+                  <option value='2'>Email</option>
+                </select>
+             </div>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="inputUserName" placeholder="Nhập từ khóa">
+            </div>
+              <div class="col-sm-2">
+                <button class="btn" id="btnsearch" data-toggle="modal">Search</button>
+              </div>
+          </div>
+        </div>  
+          
+        <div class="myform">
+          <div class="row">
+            <div style="text-align: center;">
+              <div class="panel panel-default" style="margin-top: 20px;">
+                <div class="panel-heading" style="text-align: center;"><strong>Hiển thị kết quả tìm kiếm</strong></div>
+                  <div class="panel-body scrollingtext">
+                    <li ><a class="btn" id="list-click">Nguyễn Thị Hồng</a></li>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+         <div class="myform">
+          <div class="panel panel-default">
+           <div class="panel-heading" style="text-align: center;"><strong>Thông tin chi tiết</strong></div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-5"><strong>Tên: </strong></div><div id="chitietten">Nguyễn Thị Hồng</div><br>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5"><strong>UserName: </strong></div><div id="chitietuser">nthong</div><br>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5"><strong>Email: </strong></div><div id="chitietmail">hongnt@gmail.com</div><br>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5"><strong>Số ĐT: </strong></div><div id="chitietdt">0908834823</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--Kết thúc tìm tài khoản-->
+
+    </div><!--Hết nội dung-->
+  </div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#list-click").hide();
+    $("#chitietten").hide();
+    $("#chitietuser").hide();
+    $("#chitietmail").hide();
+    $("#chitietdt").hide();
+
+    $("#btnsearch").click(function(){
+      $("#list-click").show();
+    })
+    $("#list-click").click(function(){
+      $("#chitietten").show();
+      $("#chitietuser").show();
+      $("#chitietmail").show();
+      $("#chitietdt").show();
+    })
+});
+</script>
+
+</body>
+</html>
